@@ -1,0 +1,11 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: config-management
+spec:
+  clusterName: anthos-aws
+  enableMultiRepo: true
+  policyController:
+    enabled: true
+    templateLibraryInstalled: true
+    referentialRulesEnabled: true

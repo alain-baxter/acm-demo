@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: root-sync
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: ssh://alain.baxter@sada.com@source.developers.google.com:2022/p/alainbaxter-lab/r/acm-demo
+    branch: main
+    auth: ssh
+    secretRef:
+      name: git-creds
