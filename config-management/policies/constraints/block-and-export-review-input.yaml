@@ -1,0 +1,10 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: BlockAndExportReview
+metadata:
+  name: block-export-all
+spec:
+  match:
+    scope: Namespaced
+    namespaces: ["policy-review-exporting"]
+  parameters:
+    exportData: false

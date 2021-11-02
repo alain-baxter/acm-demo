@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: business-unit
   labels:
-    owner: product.owner
+    owner: productowner
