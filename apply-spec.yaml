@@ -3,10 +3,9 @@ spec:
   configSync:
     enabled: true
     sourceFormat: unstructured
-    syncRepo: https://source.developers.google.com/p/alainbaxter-lab/r/acm-demo
+    syncRepo: git@github.com:alain-baxter/acm-demo.git
     syncBranch: main
-    secretType: gcpserviceaccount
-    gcpServiceAccountEmail: acm-source-repository@alainbaxter-lab.iam.gserviceaccount.com
+    secretType: ssh
     policyDir: config-management
   policyController:
     enabled: true
