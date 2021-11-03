@@ -25,8 +25,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Collect the configuration
-        run: docker run -v $GITHUB_WORKSPACE:/source gcr.io/config-management-release/read-yaml --input /dev/null -d source_dir=/source/config-management --output /source/config-source.yaml
+        run: docker run -u $(id -u ${USER}):$(id -g ${USER}) -v $GITHUB_WORKSPACE:/source gcr.io/config-management-release/read-yaml --input /dev/null -d source_dir=/source/config-management --output /source/config-source.yaml
 
       # Runs a set of commands using the runners shell
       - name: Validate configuration against defined policy
-        run: docker run -v $GITHUB_WORKSPACE:/source gcr.io/config-management-release/policy-controller-validate --input /source/config-source.yaml
+        run: docker run -u $(id -u ${USER}):$(id -g ${USER}) -v $GITHUB_WORKSPACE:/source gcr.io/config-management-release/policy-controller-validate --input /source/config-source.yaml
