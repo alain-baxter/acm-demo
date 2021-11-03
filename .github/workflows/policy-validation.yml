@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: "Policy Validation"
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on pull request events for the main branch
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "validate"
+  validate:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Collect the configuration
+        run: docker run -v $GITHUB_WORKSPACE:/source gcr.io/config-management-release/read-yaml --input /dev/null -d source_dir=/source/config-management --output /source/config-source.yaml
+
+      # Runs a set of commands using the runners shell
+      - name: Validate configuration against defined policy
+        run: docker run -v $GITHUB_WORKSPACE:/source gcr.io/config-management-release/policy-controller-validate --input /source/config-source.yaml
