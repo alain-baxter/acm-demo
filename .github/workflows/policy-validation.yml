@@ -23,6 +23,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Workaround for gcr.io/config-management-release/policy-controller-validate not recognizing the template library constraints
+      - name: Library Template workaround
+        run: cp library-templates/* config-management/policies/templates/
+
       # Runs a single command using the runners shell
       - name: Collect the configuration
         run: docker run -u $(id -u ${USER}):$(id -g ${USER}) -v $GITHUB_WORKSPACE:/source gcr.io/config-management-release/read-yaml --input /dev/null -d source_dir=/source/config-management --output /source/config-source.yaml
