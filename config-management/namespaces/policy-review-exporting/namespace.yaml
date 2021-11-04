@@ -2,5 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: policy-review-exporting
+  annotations:
+    configmanagement.gke.io/cluster-selector: selector-environment-dev
   labels:
     owner: platformoperator
