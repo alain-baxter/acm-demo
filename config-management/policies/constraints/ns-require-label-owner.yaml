@@ -3,6 +3,7 @@ kind: K8sRequiredLabels
 metadata:
   name: ns-require-label-owner
 spec:
+  enforcementAction: dryrun
   match:
     kinds:
       - apiGroups: [""]
