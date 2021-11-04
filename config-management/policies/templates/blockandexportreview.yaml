@@ -2,8 +2,6 @@ apiVersion: templates.gatekeeper.sh/v1beta1
 kind: ConstraintTemplate
 metadata:
   name: blockandexportreview
-  annotations:
-    configmanagement.gke.io/cluster-selector: selector-environment-dev
 spec:
   crd:
     spec:
