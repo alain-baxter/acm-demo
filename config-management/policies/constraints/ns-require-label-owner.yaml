@@ -14,7 +14,7 @@ spec:
       - "istio-system"
       - "gatekeeper-system"
       - "resource-group-system"
-      - "asm-system"
+      - "hnc-system"
   parameters:
     labels:
       - key: "owner"
