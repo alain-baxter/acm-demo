@@ -11,13 +11,10 @@ spec:
   policyController:
     # Set to true to install and enable Policy Controller
     enabled: true
-    # Uncomment to install the template library
     templateLibraryInstalled: true
-    # Uncomment to enable support for referential constraints
     referentialRulesEnabled: true
     # Uncomment to disable audit, adjust value to set audit interval
     # auditIntervalSeconds: 0
-    # Uncomment to log all denies and dryrun failures
     logDeniesEnabled: true
     # Uncomment to exempt namespaces
     # exemptableNamespaces: ["namespace-name"]
@@ -27,7 +24,5 @@ spec:
   hierarchyController:
     # Set to true to enable hierarchical namespaces
     enabled: true
-    # Comment to disable hierarchical quota:
     enableHierarchicalResourceQuota: true
-    # Comment to disable hierarchical observability:
     enablePodTreeLabels: true
