@@ -1,0 +1,27 @@
+apiVersion: config.gatekeeper.sh/v1alpha1
+kind: Config
+metadata:
+  name: config
+  namespace: gatekeeper-system
+spec:
+  match:
+    - excludedNamespaces:
+        - anthos-identity-service
+        - asm-ingress
+        - asm-system
+        - config-management-monitoring
+        - config-management-system
+        - gatekeeper-system
+        - gke-connect
+        - gke-system
+        - istio-system
+        - kube-node-lease
+        - kube-system
+        - resource-group-system
+      processes: ["audit", "webhook", "sync","mutation-webhook"]
+  sync:
+    syncOnly:
+      # Required for CIS namespaces require network policies
+      - group: "networking.k8s.io"
+        version: "v1"
+        kind: "NetworkPolicy"
