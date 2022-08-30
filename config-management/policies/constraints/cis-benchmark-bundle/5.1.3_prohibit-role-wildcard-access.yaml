@@ -41,6 +41,8 @@ spec:
   parameters:
     exemptions:
       clusterRoles:
+      - name: cilium
+      - name: cilium-operator
       - name: config-management-operator
       - name: configsync.gke.io:ns-reconciler
       - name: cluster-admin
@@ -52,10 +54,12 @@ spec:
       - name: ^istiod-clusterrole-asm-[0-9]{4}-[0-9]-istio-system$
         regexMatch: true
       - name: istiod-istio-system
+      - name: istiod-gke-system
       - name: kubelet-api-admin
       - name: metering
       - name: resource-group-manager-role
       - name: servicemesh
+      - name: stackdriver-operator
       - name: system:controller:disruption-controller
       - name: system:controller:generic-garbage-collector
       - name: system:controller:horizontal-pod-autoscaler

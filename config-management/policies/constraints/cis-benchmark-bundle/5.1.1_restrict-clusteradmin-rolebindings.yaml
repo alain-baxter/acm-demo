@@ -53,6 +53,9 @@ spec:
       kind: User
       name: ^service-[0-9]+@gcp-sa-anthosconfigmanagement.iam.gserviceaccount.com$
       regexMatch: true
-    # for Config Sync reconciler service account
+    # for Config Sync reconciler manager service account
     - kind: ServiceAccount
       name: reconciler-manager
+    # for Config Sync root reconciler service account
+    - kind: ServiceAccount
+      name: root-reconciler
