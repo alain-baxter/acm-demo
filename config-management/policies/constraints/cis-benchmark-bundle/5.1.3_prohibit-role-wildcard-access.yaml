@@ -41,6 +41,7 @@ spec:
   parameters:
     exemptions:
       clusterRoles:
+      # Modification: Added cilium ClusterRoles
       - name: cilium
       - name: cilium-operator
       - name: config-management-operator
@@ -54,11 +55,13 @@ spec:
       - name: ^istiod-clusterrole-asm-[0-9]{4}-[0-9]-istio-system$
         regexMatch: true
       - name: istiod-istio-system
+      # Modification: Added istiod for GKE system ClusterRole
       - name: istiod-gke-system
       - name: kubelet-api-admin
       - name: metering
       - name: resource-group-manager-role
       - name: servicemesh
+      # Modification: Added stackdriver operator ClusterRole
       - name: stackdriver-operator
       - name: system:controller:disruption-controller
       - name: system:controller:generic-garbage-collector

@@ -56,6 +56,6 @@ spec:
     # for Config Sync reconciler manager service account
     - kind: ServiceAccount
       name: reconciler-manager
-    # for Config Sync root reconciler service account
+    # Modification: for Config Sync root reconciler service account
     - kind: ServiceAccount
       name: root-reconciler
