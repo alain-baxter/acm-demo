@@ -54,9 +54,6 @@ spec:
     # Modification: Added parameters.exemptImages to ensure ASM proxies initContainers do not cause violations
     exemptImages:
     - "gcr.io/gke-release/asm/proxyv2:*"
-    - "artifactory-dev.wellsfargo.com/anthosdockerlocal/proxyv2:*"
-    - "artifactory-uat.wellsfargo.com/anthosdockerlocal/proxyv2:*"
-    - "artifactory.wellsfargo.com/anthosdockerlocal/proxyv2:*"
     allowedProfiles:
     - runtime/default
     - docker/default
